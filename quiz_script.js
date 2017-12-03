@@ -1,12 +1,12 @@
-let pauseCounter = false;
 let timeTable = document.querySelector("#timeTable");
 const parrent= document.querySelector(".parrent"); //поле чтобы останавливать и др счетчик
-
-let gong = document.getElementById("myAudio");  gong.volume=0.73;//звук гонга
+let gong = document.getElementById("myAudio");  gong.volume=0.05;//звук гонга
 let fieldTaskNumber = document.querySelector("#fieldTaskNumber");
 let stringTask = document.querySelector("#stringTask");
 let fieldAnswerFormat = document.querySelector("#fieldAnswerFormat");
 
+let pauseCounter = false;
+let counerOfTasks = 0;
 
 //задания на уровень
 const tasks = [
@@ -24,7 +24,6 @@ const tasks = [
 
 console.table(tasks);
 //функция счетчик
-let counerOfTasks = 0;
 function CountdownTimer(arr){
 	//считаем общее количество заданий
 	  	let stepOfTimer = 1000; let sec=0;
@@ -67,18 +66,16 @@ function CountdownTimer(arr){
   		return pauseCounter=!pauseCounter;
 		});
 	parrent.addEventListener("dblclick",(event)=>
-		{event.preventDefault();
-		stepOfTimer=stepOfTimer*2
+		{
+		return stepOfTimer=stepOfTimer*2;
 		});
 	parrent.addEventListener("contextmenu",(event)=>{
 		event.preventDefault();
-		stepOfTimer=stepOfTimer/2;
+		return stepOfTimer=stepOfTimer/2;
 		});
 	
 }; // конец функции CountdownTimer
 
 window.onload=function(){
-// gong.play();
-
-let counerTasks= CountdownTimer(tasks); //START HERE где часы, 
+let counerTasks= CountdownTimer(tasks); 
 }
