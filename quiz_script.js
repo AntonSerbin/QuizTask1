@@ -36,8 +36,8 @@ function CountdownTimer(arr){
 					if (sec>0){
 			  			console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counerOfTasks);
 				   		setTimeout(()=>plusSecond(),stepOfTimer);
-				   		time = `<span class="number-wrapper"><div class="line"></div><div class="caption">MINS</div><span class="number min">${addZero(Math.floor(sec/60))}</span></span>`;
-				   		time +=`<span class="number-wrapper"><div class="line"></div><div class="caption">SECS</div><span class="number sec">${addZero(sec%60)}</span></span>`;
+				   		time = `<span class="number-wrapper"><div class="line"></div><span class="number">${addZero(Math.floor(sec/60))}</span></span>`;
+				   		time +=`<span class="number-wrapper"><div class="line"></div><span class="number">${addZero(sec%60)}</span></span>`;
 				   		timeTable.innerHTML = time;
 				   		if (pauseCounter===false) sec-- //если не пауза то вычитаем секунду
 				   					else timeTable.innerHTML = "pause"; 

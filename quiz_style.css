@@ -3,88 +3,87 @@
 
 body {
     color: #1d1d21;
+    width: 100%; height: 100vh;
+    background: url(./images/background.png) 96% 96% no-repeat;
+	background-size: cover;
+	overflow-x:hidden;
      text-shadow: 0 -1px 0 #000;
     font-family: 'Microsoft Sans Serif','Helvetica','Arial', sans-serif;
 }
 
 .parrent{
-	width: 100vw;
-	min-height: 99vh;
-	position: relative;
-	background: url(./images/background.png) 96% 96% no-repeat;
-	background-size: cover;
-	overflow-x:hidden;
+	/*width: 100%;*/
+	/*min-height: 99%;*/
+	/*position: relative;*/
+	
 		/*position: absolute;*/
 }
-.task{	width: 80%;height: 70%;
+.task{	width: 80%;
+		height: 70%;
 		position:absolute;
-		margin-top: -10%;
+		margin-top: 0%;
 		margin-left: 10%;
+		top:;
 		 } 
 
-.task h2 {margin:3em 0 1em 0;
+.task h2 {margin:1.5em 0 0.5em 0;
 	text-align: center;
-	font-size: 12em;
+	font-size: 6em;
 }
 
-.task p{font-size: 25em;
+.task p{font-size: 12em;
 		margin:0 0 0 0;
 		text-align: center;
 		font-weight:900;
 		color: red;
 }
 
-.task h6 {margin:1em 0 1em 0;
+.task h6 {margin:0.5em 0 0.5em 0;
 	text-align: center;
-	font-size: 8em;
+	font-size: 4em;
 }
 
 .colorBlue{color:blue}
 
-
-
 	/*таймер*/
 		#timeTable {
 		    text-align: right;
-		    font-size: 20em;  /*размер счетчика!!!!!!!!!!!!!*/
+		    font-size: 5em;  /*размер счетчика!!!!!!!!!!!!!*/
 		    color: #eee;
 		    font-weight: bold;
 		}
 
 		#timeTable .number-wrapper {
-		    margin: 10px;
-		    box-shadow: 0 5px 8px #000000;
+		    margin: 0.2em;
+		    box-shadow: 0 0.1em 0.4em grey;
 		    position: relative;
 		}
 
 		#timeTable .number {
 		    display: inline-block;
-		    *display: inline;
-		    *zoom: 1;
-		    background: black;
+			background: black;
 		    border-radius: 10%;
-		    background-clip: padding-box;
-		    padding: 0 12px;
-			height: 1.4em;
-		    line-height: 1.4em;
+		    background-clip: border-box;
+		    padding: 0 0.2em;
+			height: 1em;
+		    line-height: 1em;
 		    text-align: center;
-		    border: 7px solid #555;
-		    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2);
+		    border: 4px solid #000;
 		    text-shadow: 0 4px 4px grey;
 		}
 		       
 		#timeTable .line {
 		    position: absolute;
 		    width: 100%;
-		    height: 6px;
-		    top: 50%;
+		    height: 0.05em;
+		    top: 49%;
 		    left: 0;
 		    background: #000;
-		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+		    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
 		}
 		       
 		.caption {
-		   font-size: 23em;
+		   font-size: 12em;
 		   position: absolute;
 		   bottom: -30px;
 		   left: 0;
