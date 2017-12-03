@@ -12,35 +12,31 @@ body {
 }
 
 .parrent{
-	/*width: 100%;*/
-	/*min-height: 99%;*/
-	/*position: relative;*/
-	
-		/*position: absolute;*/
+
 }
 .task{	width: 80%;
 		height: 70%;
 		position:absolute;
-		margin-top: 0%;
+		margin-top: 5%;
 		margin-left: 10%;
-		top:;
+
 		 } 
 
-.task h2 {margin:1.5em 0 0.5em 0;
+.task h2 {margin:1.5rem 0 0.5rem 0;
 	text-align: center;
 	font-size: 6em;
 }
 
-.task p{font-size: 12em;
+.task p{font-size: 12rem;
 		margin:0 0 0 0;
 		text-align: center;
 		font-weight:900;
 		color: red;
 }
 
-.task h6 {margin:0.5em 0 0.5em 0;
+.task h6 {margin:0.5rem 0 0.5rem 0;
 	text-align: center;
-	font-size: 4em;
+	font-size: 4rem;
 }
 
 .colorBlue{color:blue}
@@ -48,14 +44,14 @@ body {
 	/*таймер*/
 		#timeTable {
 		    text-align: right;
-		    font-size: 5em;  /*размер счетчика!!!!!!!!!!!!!*/
+		    font-size: 5rem;  /*размер счетчика!!!!!!!!!!!!!*/
 		    color: #eee;
 		    font-weight: bold;
 		}
 
 		#timeTable .number-wrapper {
-		    margin: 0.2em;
-		    box-shadow: 0 0.1em 0.4em grey;
+		    margin: 0.2rem;
+		    box-shadow: 0 0.1rem 0.4rem grey;
 		    position: relative;
 		}
 
@@ -64,9 +60,9 @@ body {
 			background: black;
 		    border-radius: 10%;
 		    background-clip: border-box;
-		    padding: 0 0.2em;
-			height: 1em;
-		    line-height: 1em;
+		    padding: 0 0.2rem;
+			height: 5rem;
+		    line-height: 5rem;
 		    text-align: center;
 		    border: 4px solid #000;
 		    text-shadow: 0 4px 4px grey;
@@ -75,20 +71,12 @@ body {
 		#timeTable .line {
 		    position: absolute;
 		    width: 100%;
-		    height: 0.05em;
+		    height: 3px;
 		    top: 49%;
 		    left: 0;
 		    background: #000;
 		    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
 		}
 		       
-		.caption {
-		   font-size: 12em;
-		   position: absolute;
-		   bottom: -30px;
-		   left: 0;
-		   text-align: center;
-		   width: 100%;
-		   color: #777;
-		}
+
 	/*конец таймера*/

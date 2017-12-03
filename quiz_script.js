@@ -2,7 +2,7 @@ let pauseCounter = false;
 let timeTable = document.querySelector("#timeTable");
 const parrent= document.querySelector(".parrent"); //поле чтобы останавливать и др счетчик
 
-let gong = document.getElementById("myAudio");  gong.volume=0.03;//звук гонга
+let gong = document.getElementById("myAudio");  gong.volume=0.73;//звук гонга
 let fieldTaskNumber = document.querySelector("#fieldTaskNumber");
 let stringTask = document.querySelector("#stringTask");
 let fieldAnswerFormat = document.querySelector("#fieldAnswerFormat");
@@ -18,7 +18,7 @@ const tasks = [
 	task6 = {task:`<span class="colorBlue">90</span> Г в П У`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task7 = {task:`<span class="colorBlue">15</span> Ч н С М`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task8 = {task:`<span class="colorBlue">64</span> К в Ш Д`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task9 = {task:`О <span class="colorBlue">3</span> Г Ж`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
+	task9 = {task:`<span class="colorBlue">7</span> Р О <span class="colorBlue">1</span> O`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task10 = {task:`<span class="colorBlue">36</span> К в К`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"}
 			];
 
@@ -77,6 +77,8 @@ function CountdownTimer(arr){
 	
 }; // конец функции CountdownTimer
 
-window.onload=function(){;
+window.onload=function(){
+// gong.play();
+
 let counerTasks= CountdownTimer(tasks); //START HERE где часы, 
 }
