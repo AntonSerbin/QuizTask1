@@ -1,0 +1,95 @@
+*{margin: 0; padding: 0}
+
+
+body {
+    color: #1d1d21;
+     text-shadow: 0 -1px 0 #000;
+    font-family: 'Microsoft Sans Serif','Helvetica','Arial', sans-serif;
+}
+
+.parrent{
+	width: 100vw;
+	min-height: 99vh;
+	position: relative;
+	background: url(./images/background.png) 96% 96% no-repeat;
+	background-size: cover;
+	overflow-x:hidden;
+		/*position: absolute;*/
+}
+.task{	width: 80%;height: 70%;
+		position:absolute;
+		margin-top: -10%;
+		margin-left: 10%;
+		 } 
+
+.task h2 {margin:3em 0 1em 0;
+	text-align: center;
+	font-size: 12em;
+}
+
+.task p{font-size: 25em;
+		margin:0 0 0 0;
+		text-align: center;
+		font-weight:900;
+		color: red;
+}
+
+.task h6 {margin:1em 0 1em 0;
+	text-align: center;
+	font-size: 8em;
+}
+
+.colorBlue{color:blue}
+
+
+
+	/*таймер*/
+		#timeTable {
+		    text-align: right;
+		    font-size: 20em;  /*размер счетчика!!!!!!!!!!!!!*/
+		    color: #eee;
+		    font-weight: bold;
+		}
+
+		#timeTable .number-wrapper {
+		    margin: 10px;
+		    box-shadow: 0 5px 8px #000000;
+		    position: relative;
+		}
+
+		#timeTable .number {
+		    display: inline-block;
+		    *display: inline;
+		    *zoom: 1;
+		    background: black;
+		    border-radius: 10%;
+		    background-clip: padding-box;
+		    padding: 0 12px;
+			height: 1.4em;
+		    line-height: 1.4em;
+		    text-align: center;
+		    border: 7px solid #555;
+		    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2);
+		    text-shadow: 0 4px 4px grey;
+		}
+		       
+		#timeTable .line {
+		    position: absolute;
+		    width: 100%;
+		    height: 6px;
+		    top: 50%;
+		    left: 0;
+		    background: #000;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+		}
+		       
+		.caption {
+		   font-size: 23em;
+		   position: absolute;
+		   bottom: -30px;
+		   left: 0;
+		   text-align: center;
+		   width: 100%;
+		   color: #777;
+		}
+	/*конец таймера*/
