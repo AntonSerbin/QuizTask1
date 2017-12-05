@@ -1,19 +1,20 @@
 *{margin: 0; padding: 0}
-
+/*div {	border: 1px solid red; }*/
 
 body {
     color: #1d1d21;
-    width: 100%; height: 100vh;
+    width: 100%; min-height: 100vh;
     background: url(./images/background.png) 96% 96% no-repeat;
 	background-size: cover;
 	overflow-x:hidden;
      text-shadow: 0 -1px 0 #000;
     font-family: 'Microsoft Sans Serif','Helvetica','Arial', sans-serif;
+
 }
 
 .parrent{}
 
-.task{	width: 80%;
+.taskField{	width: 80%;
 		height: 70%;
 		position:absolute;
 		margin-top: 5%;
@@ -21,21 +22,45 @@ body {
 		cursor: pointer;
 		 } 
 
-.task h2 {margin:1.5rem 0 0.5rem 0;
+.taskField h2 {margin:1.5rem 0 0.5rem 0;
 	text-align: center;
 	font-size: 6em;
 }
 
-.task p{font-size: 12rem;
+.taskField p{font-size: 12rem;
 		margin:0 0 0 0;
 		text-align: center;
 		font-weight:900;
 		color: red;
 }
 
-.task h6 {margin:0.5rem 0 0.5rem 0;
+.taskField h6 {margin:0.5rem 0 0.5rem 0;
 	text-align: center;
+	align-items: flex-end;
 	font-size: 4rem;
+}
+
+.buttons {
+	width: 100%;
+	position: absolute;	
+	bottom: 2%;
+		}
+.buttons button {font-size: 2rem;
+		background: black;
+		border-radius: 10%;
+		color: white;
+		padding: 0.2rem;
+		cursor: pointer;
+}
+
+#taskButton{
+	color: blue;
+}
+
+#answersButton{
+	position: absolute;
+	right: 0px;
+	color: red;
 }
 
 .colorBlue{color:blue}

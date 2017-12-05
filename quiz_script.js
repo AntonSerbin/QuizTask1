@@ -3,37 +3,27 @@ const parrent= document.querySelector(".parrent"); //поле чтобы ост�
 let gong = document.getElementById("myAudio");  gong.volume=0.05;//звук гонга
 let fieldTaskNumber = document.querySelector("#fieldTaskNumber");
 let stringTask = document.querySelector("#stringTask");
+let taskField = document.querySelector("#taskField");
 let fieldAnswerFormat = document.querySelector("#fieldAnswerFormat");
+let tasksButton = document.querySelector("#tasksButton");
+let answersButton = document.querySelector("#answersButton");
 
 let pauseCounter = false;
-let counerOfTasks = 0;
+let counterOfTasks = false;
 
-//задания на уровень
-const tasks = [
- 	task1 = {task:`<span class="colorBlue">365</span> Д в Г`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task2 = {task:`<span class="colorBlue">26</span> Б в А А`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task3 = {task:`<span class="colorBlue">12</span> З З`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task4 = {task:`<span class="colorBlue">9</span> Ж у К `,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task5 = {task:`<span class="colorBlue">3</span> Т <span class="colorBlue">3</span> В Д`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task6 = {task:`<span class="colorBlue">90</span> Г в П У`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task7 = {task:`<span class="colorBlue">15</span> Ч н С М`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task8 = {task:`<span class="colorBlue">64</span> К в Ш Д`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task9 = {task:`<span class="colorBlue">7</span> Р О <span class="colorBlue">1</span> O`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task10 = {task:`<span class="colorBlue">36</span> К в К`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"}
-			];
 
-console.table(tasks);
 //функция счетчик
-function CountdownTimer(arr){
-	//считаем общее количество заданий
-	  	let stepOfTimer = 1000; let sec=0;
-		console.log(pauseCounter,counerOfTasks );
+function CountdownTimer(arr, sizeFont){
+	  	let stepOfTimer = 1000; 
+	  	let sec=0;
+	  	counterOfTasks = 0;
+		console.log("Pause",pauseCounter,"counterOfTasks",counterOfTasks );
 
 		//добавляем секунду
 		  	function plusSecond(){
 		  			let time=0; 
 					if (sec>0){
-			  			console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counerOfTasks);
+			  			console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counterOfTasks);
 				   		setTimeout(()=>plusSecond(),stepOfTimer);
 				   		time = `<span class="number-wrapper"><div class="line"></div><span class="number">${addZero(Math.floor(sec/60))}</span></span>`;
 				   		time +=`<span class="number-wrapper"><div class="line"></div><span class="number">${addZero(sec%60)}</span></span>`;
@@ -43,13 +33,14 @@ function CountdownTimer(arr){
 				  		}
 					else {
 						
-						if(!arr[counerOfTasks]) {return};
-						fieldTaskNumber.innerHTML = `Задание №${counerOfTasks+1}`;
-						stringTask.innerHTML = arr[counerOfTasks].task;
-						fieldAnswerFormat.innerHTML = arr[counerOfTasks].formatAnswer;
-						sec=arr[counerOfTasks].sec; 
-						counerOfTasks++;
-						console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counerOfTasks);
+						if(!arr[counterOfTasks]) {counterOfTasks=false; return};
+						fieldTaskNumber.innerHTML = `Задание №${counterOfTasks+1}`;
+						stringTask.style.fontSize = sizeFont;
+						stringTask.innerHTML = arr[counterOfTasks].task;
+						fieldAnswerFormat.innerHTML = arr[counterOfTasks].formatAnswer;
+						sec=arr[counterOfTasks].sec; 
+						counterOfTasks++;
+						console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counterOfTasks);
 						plusSecond();
 		   			};
 	   		// звук гонга
@@ -65,17 +56,16 @@ function CountdownTimer(arr){
   	parrent.addEventListener("click",()=>{
   		return pauseCounter=!pauseCounter;
 		});
-	parrent.addEventListener("dblclick",(event)=>
-		{
-		return stepOfTimer=stepOfTimer*2;
-		});
-	parrent.addEventListener("contextmenu",(event)=>{
-		event.preventDefault();
+	timeTable.addEventListener("contextmenu",(event)=>
+		{event.preventDefault();
 		return stepOfTimer=stepOfTimer/2;
+		});
+	taskField.addEventListener("contextmenu",(event)=>
+		{event.preventDefault();
+		return stepOfTimer=stepOfTimer*2;
 		});
 	
 }; // конец функции CountdownTimer
 
-window.onload=function(){
-let counerTasks= CountdownTimer(tasks); 
-}
+
+// CountdownTimer(tasks);
