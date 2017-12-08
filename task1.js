@@ -8,7 +8,7 @@ const tasks = [
 	task6 = {task:`<span class="colorBlue">90</span> Г в П У`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task7 = {task:`<span class="colorBlue">15</span> Ч н С М`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task8 = {task:`<span class="colorBlue">64</span> К в Ш Д`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
-	task9 = {task:`<span class="colorBlue">7</span> Р О <span class="colorBlue">1 1</span> O`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
+	task9 = {task:`<span class="colorBlue">7</span> Р О <span class="colorBlue">1</span>Р O`,			sec:60,formatAnswer:"Формат ответа: фраза на русском языке"},
 	task10 = {task:`<span class="colorBlue">36</span> К в К`,		sec:60,formatAnswer:"Формат ответа: фраза на русском языке"}
 			];
 

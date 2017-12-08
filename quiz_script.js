@@ -4,6 +4,7 @@ let gong = document.getElementById("myAudio");  gong.volume=0.05;//звук го
 let fieldTaskNumber = document.querySelector("#fieldTaskNumber");
 let stringTask = document.querySelector("#stringTask");
 let taskField = document.querySelector("#taskField");
+let quizImage = document.querySelector("#quizImage");
 let fieldAnswerFormat = document.querySelector("#fieldAnswerFormat");
 let tasksButton = document.querySelector("#tasksButton");
 let answersButton = document.querySelector("#answersButton");
@@ -36,19 +37,22 @@ function CountdownTimer(arr, sizeFont){
 						if(!arr[counterOfTasks]) {counterOfTasks=false; return};
 						fieldTaskNumber.innerHTML = `Задание №${counterOfTasks+1}`;
 						stringTask.style.fontSize = sizeFont;
+						quizImage.src = arr[counterOfTasks].pict;
+						if (arr[counterOfTasks].sizeFormatAnswer) fieldAnswerFormat.style.fontSize=arr[counterOfTasks].sizeFormatAnswer;
 						stringTask.innerHTML = arr[counterOfTasks].task;
 						fieldAnswerFormat.innerHTML = arr[counterOfTasks].formatAnswer;
 						sec=arr[counterOfTasks].sec; 
+						console.log(arr[counterOfTasks], arr[counterOfTasks].pict);
 						counterOfTasks++;
 						console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counterOfTasks);
 						plusSecond();
 		   			};
 	   		// звук гонга
-	   		if ((sec==5)&&(stepOfTimer>=1000)) gong.play(); //запускаем гонг если шаг 1секунда или более
+	   		// if ((sec==5)&&(stepOfTimer>=1000)) gong.play(); //запускаем гонг если шаг 1секунда или более
 			};
 			//функция добавляет 0 в циферблат при однозначном числе
 			function addZero (num){ return ('0'+num).slice(-2)};
-			//запускаем таймер
+			//пускаем по кругу таймер
 		  	plusSecond();
 			
 
