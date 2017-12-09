@@ -8,22 +8,31 @@ let quizImage = document.querySelector("#quizImage");
 let fieldAnswerFormat = document.querySelector("#fieldAnswerFormat");
 let tasksButton = document.querySelector("#tasksButton");
 let answersButton = document.querySelector("#answersButton");
+const lastPossitionButton =document.querySelector("#lastPossitionButton");
+const slowerButton =document.querySelector("#slowerButton");
+const pauseButton =document.querySelector("#pauseButton");
+const fasterButton =document.querySelector("#fasterButton");
+const nextPossitionButton =document.querySelector("#nextPossitionButton");
+
 
 let pauseCounter = false;
 let counterOfTasks = false;
 
 
 //функция счетчик
-function CountdownTimer(arr, sizeFont){
+function CountdownTimer(arr){
 	  	let stepOfTimer = 1000; 
 	  	let sec=0;
 	  	counterOfTasks = 0;
 		console.log("Pause",pauseCounter,"counterOfTasks",counterOfTasks );
+		taskField.style = 'display:block';
+
 
 		//добавляем секунду
 		  	function plusSecond(){
 		  			let time=0; 
 					if (sec>0){
+					  	// gong.play();
 			  			console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counterOfTasks);
 				   		setTimeout(()=>plusSecond(),stepOfTimer);
 				   		time = `<span class="number-wrapper"><div class="line"></div><span class="number">${addZero(Math.floor(sec/60))}</span></span>`;
@@ -33,13 +42,15 @@ function CountdownTimer(arr, sizeFont){
 				   					else timeTable.innerHTML = "pause"; 
 				  		}
 					else {
-						
-						if(!arr[counterOfTasks]) {counterOfTasks=false; return};
+						if(!arr[counterOfTasks]) {
+							taskField.style = 'display:none';
+							counterOfTasks=false;
+							return};
 						fieldTaskNumber.innerHTML = `Задание №${counterOfTasks+1}`;
-						stringTask.style.fontSize = sizeFont;
 						quizImage.src = arr[counterOfTasks].pict;
-						if (arr[counterOfTasks].sizeFormatAnswer) fieldAnswerFormat.style.fontSize=arr[counterOfTasks].sizeFormatAnswer;
+						if (arr[counterOfTasks].sizeTask) stringTask.style.fontSize=arr[counterOfTasks].sizeTask;
 						stringTask.innerHTML = arr[counterOfTasks].task;
+						if (arr[counterOfTasks].sizeFormatAnswer) fieldAnswerFormat.style.fontSize=arr[counterOfTasks].sizeFormatAnswer;
 						fieldAnswerFormat.innerHTML = arr[counterOfTasks].formatAnswer;
 						sec=arr[counterOfTasks].sec; 
 						console.log(arr[counterOfTasks], arr[counterOfTasks].pict);
@@ -47,8 +58,8 @@ function CountdownTimer(arr, sizeFont){
 						console.log("Seconds",sec,"stepOfTimer",stepOfTimer/1000,"counterofTasks",counterOfTasks);
 						plusSecond();
 		   			};
-	   		// звук гонга
-	   		// if ((sec==5)&&(stepOfTimer>=1000)) gong.play(); //запускаем гонг если шаг 1секунда или более
+	   		// звук гонга , в блоке условаия: текущее время в которое включится звук  и текущая скорость таймера
+	   		if ((sec==16)&&(stepOfTimer>=500)) gong.play(); //запускаем гонг если шаг 1секунда или более
 			};
 			//функция добавляет 0 в циферблат при однозначном числе
 			function addZero (num){ return ('0'+num).slice(-2)};
@@ -56,20 +67,38 @@ function CountdownTimer(arr, sizeFont){
 		  	plusSecond();
 			
 
-  	//блок для паузы таймера, ускорения, замедления
-  	parrent.addEventListener("click",()=>{
+  	//блок для управления временем 
+
+	lastPossitionButton.addEventListener("click",(event)=>
+		{event.preventDefault();
+		if (counterOfTasks<=1)  return	counterOfTasks=1;
+		counterOfTasks = counterOfTasks - 2;	
+		return sec=0;
+		});
+	slowerButton.addEventListener("click",(event)=>
+		{event.preventDefault();
+		return stepOfTimer=stepOfTimer*2;
+		});
+	pauseButton.addEventListener("click",()=>{
   		return pauseCounter=!pauseCounter;
 		});
-	timeTable.addEventListener("contextmenu",(event)=>
+	fasterButton.addEventListener("click",(event)=>
 		{event.preventDefault();
 		return stepOfTimer=stepOfTimer/2;
 		});
-	taskField.addEventListener("contextmenu",(event)=>
+	nextPossitionButton.addEventListener("click",(event)=>
 		{event.preventDefault();
-		return stepOfTimer=stepOfTimer*2;
+		return sec=0;
 		});
 	
 }; // конец функции CountdownTimer
 
+//запуск функции задания первый аргумент = массив заданий, второй размер шрифта
+tasksButton.addEventListener("click",()=> 
+{if (!counterOfTasks) 
+	CountdownTimer(tasks, '12rem')});
+//запуск функции ответы, первый аргумент = массив заданий, второй размер шрифта
+answersButton.addEventListener("click",()=> {
+	if (confirm("Ответы уверен?")&&(!counterOfTasks)) CountdownTimer(answers, '8rem')
+});
 
-// CountdownTimer(tasks);

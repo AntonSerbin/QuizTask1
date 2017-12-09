@@ -4,12 +4,25 @@
 body {
     color: #1d1d21;
     width: 100%; height: 100vh;
-    background: url(./images/background.png) 100% 100% no-repeat;
+    background: url(./background.png) 100% 100% no-repeat;
 	background-size: 100vw 100vh;
 	overflow-x:hidden;
     text-shadow: 0 -1px 0 #000;
     font-family: 'Microsoft Sans Serif','Helvetica','Arial', sans-serif;
 
+}
+#controlTime {text-align: right;
+		    font-size: 5rem;  /*размер счетчика!!!!!!!!!!!!!*/
+		    color: #eee;
+		    cursor: pointer;
+}
+
+#controlTime img {width: 2.2rem;}
+
+#slowerButton {transform: rotate(180deg) translateY(-0.3rem);
+}
+
+#lastPossitionButton {transform: rotate(180deg) translateY(-0.3rem);
 }
 
 #quizImage{
@@ -26,7 +39,7 @@ body {
 .taskField{	width: 80%;
 		height: 70%;
 		position:absolute;
-		margin-top: 3%;
+		margin-top: 10rem;
 		margin-left: 5%;
 		cursor: pointer;
 		 } 
