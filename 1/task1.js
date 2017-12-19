@@ -71,7 +71,7 @@ const answers = [
 	task4 = {task:`Руссо туристо - облико морале!`,
 			sec:10,
 			sizeFormatAnswer: ``,
-			sizeTask:`11rem`,
+			sizeTask:`10rem`,
 			formatAnswer:"",
 			pict:"./Images/4_rustom.jpg"},
 	task5 = {task:`Шампанское по утрам пьют аристократы и дегенераты`,
