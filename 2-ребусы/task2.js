@@ -49,7 +49,27 @@ const tasks = [
 		formatAnswer:"Формат ответа: слово на русском языке",
 		sizeFormatAnswer: `3rem`
 	},		
-
+	task8 = {
+		task:"",
+		pict:"./images/8_vika.jpg",
+		sec:60,
+		formatAnswer:"Формат ответа: слово на русском языке",
+		sizeFormatAnswer: `3rem`
+	},		
+	task9 = {
+		task:"",
+		pict:"./images/9_alina.jpg",
+		sec:60,
+		formatAnswer:"Формат ответа: слово на русском языке",
+		sizeFormatAnswer: `3rem`
+	},
+	task10 = {
+		task:"",
+		pict:"./images/99_kiril.jpg",
+		sec:60,
+		formatAnswer:"Формат ответа: слово на русском языке",
+		sizeFormatAnswer: `3rem`
+	}
 	];
 
 
@@ -61,6 +81,9 @@ const answers = [
 	task5 = {task:``,pict:`./images/5_nastya.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Растяжка</span>`, sizeFormatAnswer: `12rem`},
 	task6 = {task:``,pict:`./images/6_roman.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Бахрома</span>`, sizeFormatAnswer: `12rem`},
 	task7 = {task:``,pict:`./images/7_liliya.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Фамилия</span>`, sizeFormatAnswer: `12rem`},
+	task8 = {task:``,pict:`./images/8_vika.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Туника</span>`, sizeFormatAnswer: `12rem`},
+	task9 = {task:``,pict:`./images/9_alina.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Фрейлина</span>`, sizeFormatAnswer: `12rem`},
+	task99 = {task:``,pict:`./images/99_kiril.jpg`,		sec:10,formatAnswer:`<span class="colorBlue">Кириллица</span>`, sizeFormatAnswer: `11rem`},
 	
 			];
 

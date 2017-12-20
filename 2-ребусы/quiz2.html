@@ -8,32 +8,31 @@
 </head>
 <body>
 
-<!-- можно изменить аудио файл, в скрипте, играет за 10 секунд до 0  -->
+<!-- можно указать аудио файл, играет за 15(можно время изменить в скрипте) секунд до 0  -->
 <audio id="myAudio">
   <source src="../core/pick.mp3" type="audio/mpeg">
 </audio>
 
-
-<div class="clock" id="timeTable">00:00</div>
+  <div id="timeTable">1</div>
   <div id="controlTime">
   		<img id="lastPossitionButton" src="../core/change_task.svg" alt="">
   		<img id="slowerButton" src="../core/forward.svg" alt="">
   		<img id="pauseButton" src="../core/pause.svg"  alt="">
   		<img id="fasterButton" src="../core/forward.svg" alt="">
   		<img id="nextPossitionButton" src="../core/change_task.svg" alt="">
-</div>
+  	</div>
 
 <div class="parrent" onselectstart="return false">
-	<img id="quizImage" src="" alt="">
+
 
 	<div class="taskField" id="taskField">
-
 		<h2 id="fieldTaskNumber">Start</h2>
 		<p id="stringTask">Start</p>
 		<h6 id="fieldAnswerFormat">Start</h6>
+		<img id="quizImage" src="" alt="">
 	</div>
 
- 
+
 	
 </div> 
 <div class="buttons">
@@ -41,8 +40,6 @@
 		<button id="answersButton">Answers</button>
 	</div>
 </body>
-
-
 
 
 <script src="task2.js"></script> 
