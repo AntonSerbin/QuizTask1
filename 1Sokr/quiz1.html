@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Quiz</title>
 	<link rel="stylesheet" href="../core/quiz_style.css" >
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 <audio id="myAudio">
   <source src="../core/pick.mp3" type="audio/mpeg">
 </audio>
-
+<div class="container-fluid">
   <div id="timeTable">1</div>
   <div id="controlTime">
   		<img id="lastPossitionButton" src="../core/change_task.svg" alt="">
@@ -28,8 +29,9 @@
 	<div class="taskField" id="taskField">
 		<h2 id="fieldTaskNumber">Start</h2>
 		<p id="stringTask">Start</p>
-		<h6 id="fieldAnswerFormat">Start</h6>
 		<img id="quizImage" src="" alt="">
+		<h6 id="fieldAnswerFormat">Start</h6>
+
 	</div>
 
 
@@ -39,6 +41,8 @@
 		<button id="tasksButton">Tasks</button>
 		<button id="answersButton">Answers</button>
 	</div>
+
+</div>
 </body>
 
 

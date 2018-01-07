@@ -82,6 +82,9 @@ function CountdownTimer(arr){
 	pauseButton.addEventListener("click",()=>{
   		return pauseCounter=!pauseCounter;
 		});
+	parrent.addEventListener("click",()=>{
+  		return pauseCounter=!pauseCounter;
+		});
 	fasterButton.addEventListener("click",(event)=>
 		{event.preventDefault();
 		return stepOfTimer=stepOfTimer/2;
