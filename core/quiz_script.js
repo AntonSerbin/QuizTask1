@@ -1,3 +1,5 @@
+let startSecEqual = 20; //кратно каким секундам начинать
+
 let timeTable = document.querySelector("#timeTable");
 const parrent= document.querySelector(".parrent"); //поле чтобы останавливать и др счетчик
 let gong = document.getElementById("myAudio");  gong.volume=0.05;//звук гонга
@@ -17,6 +19,24 @@ const nextPossitionButton =document.querySelector("#nextPossitionButton");
 
 let pauseCounter = false;
 let counterOfTasks = false;
+
+
+//пауза перез стартом
+
+function pauseBeforeStart() {
+	let startSec = new Date;
+	console.log("start timer:", startSec.getSeconds());
+	let pauseOfCounter = true;
+	stringTask.innerHTML = startSecEqual-startSec.getSeconds()%startSecEqual;
+	if (startSec.getSeconds()%20==0) {
+			CountdownTimer(tasks, '12rem');
+			pauseOfCounter=false;
+			beforeStart.innerHTML = '';
+		}
+
+	if (pauseOfCounter) setTimeout(()=>pauseBeforeStart(),100);
+};
+
 
 
 //функция счетчик
@@ -99,7 +119,7 @@ function CountdownTimer(arr){
 //запуск функции задания первый аргумент = массив заданий, второй размер шрифта
 tasksButton.addEventListener("click",()=> 
 {if (!counterOfTasks) 
-	CountdownTimer(tasks, '12rem')});
+	pauseBeforeStart()});
 //запуск функции ответы, первый аргумент = массив заданий, второй размер шрифта
 answersButton.addEventListener("click",()=> {
 	if (confirm("Ответы уверен?")&&(!counterOfTasks)) CountdownTimer(answers, '8rem')
