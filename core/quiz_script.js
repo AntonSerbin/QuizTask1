@@ -1,4 +1,5 @@
-let startSecEqual = 20; //кратно каким секундам начинать
+let startSecEqual = 10; //кратно каким секундам начинать
+
 
 let timeTable = document.querySelector("#timeTable");
 const parrent= document.querySelector(".parrent"); //поле чтобы останавливать и др счетчик
@@ -24,17 +25,18 @@ let counterOfTasks = false;
 //пауза перез стартом
 
 function pauseBeforeStart() {
+	
 	let startSec = new Date;
 	console.log("start timer:", startSec.getSeconds());
 	let pauseOfCounter = true;
 	stringTask.innerHTML = startSecEqual-startSec.getSeconds()%startSecEqual;
-	if (startSec.getSeconds()%20==0) {
-			CountdownTimer(tasks, '12rem');
+	if ((pauseOfCounter==true)&&(startSec.getSeconds()%startSecEqual==0)) {
 			pauseOfCounter=false;
-			beforeStart.innerHTML = '';
+			CountdownTimer(tasks);
 		}
 
 	if (pauseOfCounter) setTimeout(()=>pauseBeforeStart(),100);
+		;
 };
 
 
@@ -117,11 +119,18 @@ function CountdownTimer(arr){
 }; // конец функции CountdownTimer
 
 //запуск функции задания первый аргумент = массив заданий, второй размер шрифта
-tasksButton.addEventListener("click",()=> 
-{if (!counterOfTasks) 
-	pauseBeforeStart()});
+tasksButton.addEventListener("click",()=>{
+	let additionalPause = document.querySelector("#additionalPause");
+	additionalPause.setAttribute("type", "hidden");
+
+	if (!counterOfTasks) {
+		console.log("start, ",additionalPause.value*100);
+		setTimeout(()=>pauseBeforeStart(),(additionalPause.value*100));
+	}
+	else alert("Закончите задания");
+});
 //запуск функции ответы, первый аргумент = массив заданий, второй размер шрифта
 answersButton.addEventListener("click",()=> {
-	if (confirm("Ответы уверен?")&&(!counterOfTasks)) CountdownTimer(answers, '8rem')
+	if (confirm("Ответы уверен?")&&(!counterOfTasks)) CountdownTimer(answers)
 });
 
