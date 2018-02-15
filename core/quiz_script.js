@@ -20,6 +20,7 @@ const nextPossitionButton =document.querySelector("#nextPossitionButton");
 
 let pauseCounter = false;
 let counterOfTasks = false;
+let pauseOfCounter = true;
 
 
 //пауза перез стартом
@@ -27,16 +28,24 @@ let counterOfTasks = false;
 function pauseBeforeStart() {
 	
 	let startSec = new Date;
-	console.log("start timer:", startSec.getSeconds());
-	let pauseOfCounter = true;
-	stringTask.innerHTML = startSecEqual-startSec.getSeconds()%startSecEqual;
-	if ((pauseOfCounter==true)&&(startSec.getSeconds()%startSecEqual==0)) {
-			pauseOfCounter=false;
-			CountdownTimer(tasks);
-		}
+	console.log("startSec.getSeconds():", startSec.getSeconds());
+	console.log("IF", (startSec.getSeconds()%startSecEqual));
 
-	if (pauseOfCounter) setTimeout(()=>pauseBeforeStart(),100);
-		;
+
+	
+	if ((pauseOfCounter)&&(startSec.getSeconds()%startSecEqual)==0) {
+				pauseOfCounter = false;
+				setTimeout(()=>{
+					console.log("start");
+					CountdownTimer(tasks)
+				},parseInt(additionalPause.value));
+				
+		};
+	if (pauseOfCounter) {
+			setTimeout(()=>pauseBeforeStart(),100);
+			setTimeout(()=>stringTask.innerHTML = startSecEqual-startSec.getSeconds()%startSecEqual,parseInt(additionalPause.value));
+			;
+		};
 };
 
 
@@ -124,8 +133,8 @@ tasksButton.addEventListener("click",()=>{
 	additionalPause.setAttribute("type", "hidden");
 
 	if (!counterOfTasks) {
-		console.log("start, ",additionalPause.value*100);
-		setTimeout(()=>pauseBeforeStart(),(additionalPause.value*100));
+		console.log("start1, ",additionalPause.value);
+		setTimeout(()=>pauseBeforeStart(),0);
 	}
 	else alert("Закончите задания");
 });
