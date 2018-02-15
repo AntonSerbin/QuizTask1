@@ -1,4 +1,4 @@
-let startSecEqual = 10; //кратно каким секундам начинать
+let startSecEqual = 20; //кратно каким секундам начинать
 
 
 let timeTable = document.querySelector("#timeTable");
