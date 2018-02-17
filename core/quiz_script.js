@@ -129,7 +129,7 @@ function CountdownTimer(arr){
 
 //запуск функции задания первый аргумент = массив заданий, второй размер шрифта
 tasksButton.addEventListener("click",()=>{
-	let additionalPause = document.querySelector("#additionalPause");
+	let additionalPause = document.querySelector("#additionalPause")*100;
 	additionalPause.setAttribute("type", "hidden");
 
 	if (!counterOfTasks) {
